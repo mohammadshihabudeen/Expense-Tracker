@@ -1,11 +1,8 @@
 import { View ,Text} from "react-native"
+import ExpensesOutput from "../components/ExpensesOutput"
 
 export default AllExpenses = () =>{
     return (
-        <View>
-            <Text>
-                All expenses screen
-            </Text>
-        </View>
+            <ExpensesOutput />
     )
 }

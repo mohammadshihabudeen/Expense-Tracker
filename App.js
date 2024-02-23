@@ -19,11 +19,11 @@ function MainScreen() {
       screenOptions={
         {
           headerStyle: {
-            backgroundColor: GlobalStyles.colors.primary800
+            backgroundColor: GlobalStyles.colors.primary400
           },
           headerTintColor: "white",
           tabBarStyle: {
-            backgroundColor: GlobalStyles.colors.primary800
+            backgroundColor: GlobalStyles.colors.primary400
           },
           tabBarActiveTintColor: GlobalStyles.colors.accent500
         }
