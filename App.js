@@ -4,30 +4,35 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-
+import IconButton from './components/ui/IconButton';
 import AllExpensesScreen from './screens/AllExpensesScreen';
 import RecentExpensesScreen from './screens/RecentExpensesScreen';
 import ManageExpensesScreen from './screens/ManageExpensesScreen';
 import { GlobalStyles } from './constants/styles';
-
+import { useNavigation } from '@react-navigation/native';
+import ExpensesContextProvider from './store/expenses-context';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MainScreen() {
   return (
     <Tab.Navigator
-      screenOptions={
-        {
-          headerStyle: {
-            backgroundColor: GlobalStyles.colors.primary400
-          },
-          headerTintColor: "white",
-          tabBarStyle: {
-            backgroundColor: GlobalStyles.colors.primary400
-          },
-          tabBarActiveTintColor: GlobalStyles.colors.accent500
-        }
-      }
+    screenOptions={({ navigation }) => ({
+      headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+      headerTintColor: 'white',
+      tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+      tabBarActiveTintColor: GlobalStyles.colors.accent500,
+      headerRight: ({ tintColor }) => (
+        <IconButton
+          icon="add"
+          size={24}
+          color={tintColor}
+          onPress={() => {
+            navigation.navigate('Manage Expenses');
+          }}
+        />
+      ),
+    })}
     >
 
       <Tab.Screen name="Recent Expenses" component={RecentExpensesScreen}
@@ -58,9 +63,14 @@ function MainScreen() {
 
 export default function App() {
   return (
+    <ExpensesContextProvider>
     <NavigationContainer>
-      <StatusBar style="light" />
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+        headerTintColor: 'white',
+      }}
+      >
         <Stack.Screen name="All Expenses" component={MainScreen}
           options={{
             headerShown: false
@@ -68,6 +78,7 @@ export default function App() {
         <Stack.Screen name="Manage Expenses" component={ManageExpensesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
+    </ExpensesContextProvider>
   );
 }
 

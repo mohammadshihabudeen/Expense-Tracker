@@ -10,7 +10,7 @@ export default ExpensesSummary = ({data,days}) =>{
     return (
        <View style={styles.container}>
         <Text style={styles.text}>
-            Total Amount:
+            {days}
         </Text>
         <Text style={styles.text}>
             ${amount.toFixed(2)}

@@ -1,3 +1,7 @@
-export default date1=(data)=>{
-    return `${data.getDate()}-${data.getMonth()+1}-${data.getFullYear()}`
-}
+export function getFormattedDate(date) {
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  }
+  
+  export function getDateMinusDays(date, days) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate() - days);
+  }
