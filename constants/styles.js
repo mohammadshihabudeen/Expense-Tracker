@@ -1,16 +1,16 @@
 export const GlobalStyles = {
-    colors: {
-      primary50: '#e4d9fd',
-      primary100: '#c6affc',
-      primary200: '#a281f0',
-      primary400: '#5721d4',
-      primary500: '#3e04c3',
-      primary700: '#2d0689',
-      primary800: '#200364',
-      accent500: '#f7bc0c',
-      error50: '#fcc4e4',
-      error500: '#9b095c',
-      gray500: '#39324a',
-      gray700: '#221c30',
-    },
-  };
+  colors: {
+    primary50: '#FFFFFF', // White
+    primary100: '#F0F0F0', // Light gray
+    primary200: '#D9D9D9', // Medium gray
+    primary400: '#666666', // Dark gray
+    primary500: '#333333', // Very dark gray
+    primary700: '#1A1A1A', // Almost black
+    primary800: '#000000', // Black
+    accent500: '#FFC700', // Yellow accent color, you can adjust this as needed
+    error50: '#FFEBEE', // Light red for error
+    error500: '#D32F2F', // Dark red for error
+    gray500: '#808080', // Medium gray for general use
+    gray700: '#4D4D4D', // Dark gray for general use
+  },
+};

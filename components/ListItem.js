@@ -12,7 +12,7 @@ export default ListItem = ({ id ,description, amount, date }) => {
       }
   
     return (
-        <Pressable style={styles.container} android_ripple={{color:"#9009c1"}} onPress={expensePressHandler}>
+        <Pressable style={styles.container} android_ripple={{color:"#D9D9D9"}} onPress={expensePressHandler}>
             <View style={styles.details}>
                 <Text style={styles.text}>
                     {description}
@@ -61,7 +61,8 @@ const styles = StyleSheet.create(
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: GlobalStyles.colors.primary50,
-            borderRadius: 8
+            borderRadius: 8,
+            minWidth: 90
         },
         amountText :{
             color: GlobalStyles.colors.primary500,

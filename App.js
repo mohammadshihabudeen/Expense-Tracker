@@ -64,6 +64,7 @@ function MainScreen() {
 export default function App() {
   return (
     <ExpensesContextProvider>
+      <StatusBar style='light'/>
     <NavigationContainer>
       <Stack.Navigator
       screenOptions={{
@@ -85,7 +86,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
